@@ -330,10 +330,10 @@ teles3d = (function() {
     return _results;
   };
 
-  teles3d.prototype.Ball = function(tnAng, tnX, tnY, tnZ) {
-    this.CircleX3D(tnAng, tnX, tnY, tnZ, 1.5);
-    this.CircleY3D(tnAng, tnX, tnY, tnZ, 1.5);
-    return this.CircleZ3D(tnAng, tnX, tnY, tnZ, 1.5);
+  teles3d.prototype.Ball = function(tnAng, tnX, tnY, tnZ, tnRaio) {
+    this.CircleX3D(tnAng, tnX, tnY, tnZ, tnRaio);
+    this.CircleY3D(tnAng, tnX, tnY, tnZ, tnRaio);
+    return this.CircleZ3D(tnAng, tnX, tnY, tnZ, tnRaio);
   };
 
   return teles3d;

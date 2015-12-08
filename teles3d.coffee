@@ -297,10 +297,10 @@ class teles3d
 		    @Line3D(0,nX0,nY0,nI,nX0+(2*tnTam),nY0,nI)
 		    nI=nI-tnLargura
 
-	Ball : (tnAng,tnX,tnY,tnZ) =>
-		@CircleX3D(tnAng,tnX,tnY,tnZ,1.5)
-		@CircleY3D(tnAng,tnX,tnY,tnZ,1.5)
-		@CircleZ3D(tnAng,tnX,tnY,tnZ,1.5)
+	Ball : (tnAng,tnX,tnY,tnZ, tnRaio) =>
+		@CircleX3D(tnAng,tnX,tnY,tnZ, tnRaio)
+		@CircleY3D(tnAng,tnX,tnY,tnZ, tnRaio)
+		@CircleZ3D(tnAng,tnX,tnY,tnZ, tnRaio)
 
 
 
