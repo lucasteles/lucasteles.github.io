@@ -208,26 +208,26 @@ class teles3d
 	        oAnt.nZ = oPixel.nZ
 
 	CircleY3D : ( tnAng, tnX, tnY, tnZ, tnRaio) =>
-	    nCY  = tnY
-	    nCZ  = tnZ
-	    nTam = tnRaio
-	    oPixel =  new Pixel3D()
-	    oAnt  = new Pixel3D()
+		nCY  = tnY
+		nCZ  = tnZ
+		nTam = tnRaio
+		oPixel =  new Pixel3D()
+		oAnt  = new Pixel3D()
 
-	    for nI in [0..361]
-	         nRad = nI * (Math.PI / 180)
+		for nI in [0..361]
+			nRad = nI * (Math.PI / 180)
 
-	        oPixel.nY =  nCY + (Math.cos(nRad) * nTam)
-	        oPixel.nZ =  nCZ + (Math.sin(nRad) * nTam)
-	        oPixel.nX = tnX
+			oPixel.nY =  nCY + (Math.cos(nRad) * nTam)
+			oPixel.nZ =  nCZ + (Math.sin(nRad) * nTam)
+			oPixel.nX = tnX
 
-	        if(nI > 0)
-	            @Line3D(tnAng,oAnt.nX,oAnt.nY,oAnt.nZ,oPixel.nX,oPixel.nY,oPixel.nZ)
-	        
-	        oAnt.nX = oPixel.nX
-	        oAnt.nY = oPixel.nY
-	        oAnt.nZ = oPixel.nZ
-	 
+			if(nI > 0)
+				@Line3D(tnAng,oAnt.nX,oAnt.nY,oAnt.nZ,oPixel.nX,oPixel.nY,oPixel.nZ)
+
+			oAnt.nX = oPixel.nX
+			oAnt.nY = oPixel.nY
+			oAnt.nZ = oPixel.nZ
+
 	CircleZ3D : ( tnAng, tnX, tnY, tnZ, tnRaio) => 
 		nCX  = tnX
 		nCZ  = tnZ
