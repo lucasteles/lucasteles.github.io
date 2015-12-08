@@ -288,7 +288,7 @@ class teles3d
 		nY0 = 0
 		nZ0 = tnTam
 		nI = nX0;
-		while ( nI < tnTam)
+		while ( nI <= tnTam)
 			@Line3D(0,nI,nY0,nZ0,nI,nY0,nZ0-(2*tnTam))
 			nI += tnLargura
 
@@ -296,6 +296,11 @@ class teles3d
 		while ( nI>=-tnTam )
 		    @Line3D(0,nX0,nY0,nI,nX0+(2*tnTam),nY0,nI)
 		    nI=nI-tnLargura
+
+	Ball : (tnAng,tnX,tnY,tnZ) =>
+		@CircleX3D(tnAng,tnX,tnY,tnZ,1.5)
+		@CircleY3D(tnAng,tnX,tnY,tnZ,1.5)
+		@CircleZ3D(tnAng,tnX,tnY,tnZ,1.5)
 
 
 

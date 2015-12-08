@@ -28,6 +28,7 @@ Pixel2D = (function() {
 
 teles3d = (function() {
   function teles3d(canvas, width, height) {
+    this.Ball = __bind(this.Ball, this);
     this.Plan = __bind(this.Plan, this);
     this.Cube3D = __bind(this.Cube3D, this);
     this.SquareZ3D = __bind(this.SquareZ3D, this);
@@ -316,7 +317,7 @@ teles3d = (function() {
     nY0 = 0;
     nZ0 = tnTam;
     nI = nX0;
-    while (nI < tnTam) {
+    while (nI <= tnTam) {
       this.Line3D(0, nI, nY0, nZ0, nI, nY0, nZ0 - (2 * tnTam));
       nI += tnLargura;
     }
@@ -327,6 +328,12 @@ teles3d = (function() {
       _results.push(nI = nI - tnLargura);
     }
     return _results;
+  };
+
+  teles3d.prototype.Ball = function(tnAng, tnX, tnY, tnZ) {
+    this.CircleX3D(tnAng, tnX, tnY, tnZ, 1.5);
+    this.CircleY3D(tnAng, tnX, tnY, tnZ, 1.5);
+    return this.CircleZ3D(tnAng, tnX, tnY, tnZ, 1.5);
   };
 
   return teles3d;
