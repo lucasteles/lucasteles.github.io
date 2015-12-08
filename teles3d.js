@@ -217,7 +217,7 @@ teles3d = (function() {
     oPixel = new Pixel3D();
     oAnt = new Pixel3D();
     _results = [];
-    for (nI = _i = 0; _i <= 360; nI = ++_i) {
+    for (nI = _i = 0; _i <= 361; nI = ++_i) {
       nRad = nI * (Math.PI / 180);
       oPixel.nX = nCX + (Math.cos(nRad) * nTam);
       oPixel.nY = nCY + (Math.sin(nRad) * nTam);
@@ -239,7 +239,7 @@ teles3d = (function() {
     nTam = tnRaio;
     oPixel = new Pixel3D();
     oAnt = new Pixel3D();
-    for (nI = _i = 0; _i <= 360; nI = ++_i) {
+    for (nI = _i = 0; _i <= 361; nI = ++_i) {
       nRad = nI * (Math.PI / 180);
     }
     oPixel.nY = nCY + (Math.cos(nRad) * nTam);
@@ -254,24 +254,26 @@ teles3d = (function() {
   };
 
   teles3d.prototype.CircleZ3D = function(tnAng, tnX, tnY, tnZ, tnRaio) {
-    var nCX, nCZ, nI, nRad, nTam, oAnt, oPixel, _i;
+    var nCX, nCZ, nI, nRad, nTam, oAnt, oPixel, _i, _results;
     nCX = tnX;
     nCZ = tnZ;
     nTam = tnRaio;
     oPixel = new Pixel3D();
     oAnt = new Pixel3D();
-    for (nI = _i = 0; _i <= 360; nI = ++_i) {
+    _results = [];
+    for (nI = _i = 0; _i <= 361; nI = ++_i) {
       nRad = nI * (Math.PI / 180);
+      oPixel.nX = nCX + (Math.cos(nRad) * nTam);
+      oPixel.nZ = nCZ + (Math.sin(nRad) * nTam);
+      oPixel.nY = tnY;
+      if (nI > 0) {
+        this.Line3D(tnAng, oAnt.nX, oAnt.nY, oAnt.nZ, oPixel.nX, oPixel.nY, oPixel.nZ);
+      }
+      oAnt.nX = oPixel.nX;
+      oAnt.nY = oPixel.nY;
+      _results.push(oAnt.nZ = oPixel.nZ);
     }
-    oPixel.nX = nCX + (Math.cos(nRad) * nTam);
-    oPixel.nZ = nCZ + (Math.sin(nRad) * nTam);
-    oPixel.nY = tnY;
-    if (nI > 0) {
-      this.Line3D(tnAng, oAnt.nX, oAnt.nY, oAnt.nZ, oPixel.nX, oPixel.nY, oPixel.nZ);
-    }
-    oAnt.nX = oPixel.nX;
-    oAnt.nY = oPixel.nY;
-    return oAnt.nZ = oPixel.nZ;
+    return _results;
   };
 
   teles3d.prototype.SquareX3D = function(tnAng, tnX, tnY, tnZ, tnTamX, tnTamY) {
