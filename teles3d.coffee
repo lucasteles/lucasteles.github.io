@@ -66,8 +66,8 @@ class teles3d
 		nSinTxSinP = nSinT * nSinP
 
 		nX0 = toPixel3d.nX
-		nY0 = toPixel3d.nY
-		nZ0 = -toPixel3d.nZ
+		nY0 = -toPixel3d.nY
+		nZ0 = toPixel3d.nZ
 
 		nX1 = nCosT * nX0 + nSinT * nZ0
 		nY1 = -nSinTxSinP * nX0 + nCosP * nY0 + nCosTxSinP * nZ0
