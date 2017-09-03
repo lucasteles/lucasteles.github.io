@@ -6,11 +6,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
     <script>
         $(function(){
-
+            
+            var espera = false;
+            var loader = '<img class="loader" src="https://68.media.tumblr.com/695ce9a82c8974ccbbfc7cad40020c62/tumblr_o9c9rnRZNY1qbmm1co1_500.gif" >';
             function vaiPiada()
             {
+                if (espera)
+                    return;
+                
+                $(".cite").html( loader );
+                espera = true;
                 $.get("http://teles-jokes.azurewebsites.net/api/GetJoke?code=7skvGJHPnh6jOiZhwNKV0dL0awj9qTorLElJq596sKVHmrmgFJ6u4w==", function(data){
                     $(".cite").html( data.joke.replace("||", "<br>") );
+                    espera= false;
                 });
             }
 
@@ -92,7 +100,6 @@
         </div>
         <div class="center">
             <blockquote class="cite">
-                <img class="loader" src="https://68.media.tumblr.com/695ce9a82c8974ccbbfc7cad40020c62/tumblr_o9c9rnRZNY1qbmm1co1_500.gif" >
             </blockquote><br>
             <code>
                 npm install -g teles
