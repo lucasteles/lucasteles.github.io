@@ -19,6 +19,7 @@
                 $.get("http://teles-jokes.azurewebsites.net/api/GetJoke?code=7skvGJHPnh6jOiZhwNKV0dL0awj9qTorLElJq596sKVHmrmgFJ6u4w==", function(data){
                     $(".cite").html( data.joke.replace("||", "<br>") );
                     espera= false;
+                    $(".foto").toggleClass("flip");
                 });
             }
 
@@ -50,6 +51,14 @@
         .center 
         {
             text-align: center;
+        }
+        .flip {
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
         }
         blockquote {
             display: inline-block;
