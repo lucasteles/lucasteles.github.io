@@ -1,0 +1,124 @@
+<html>
+
+<style> 
+.piada code {
+        padding: 5px;
+        display: inline-block;
+        margin-bottom: 20px;
+        border: dotted;
+        border-width: 1px;
+    }
+    .foto {
+        display: inline-block;
+    }
+    .center {
+        text-align: center;
+    }
+    .flip {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: 'FlipH';
+    }
+ .piada    blockquote {
+        display: inline-block;
+        font-family: Georgia, serif;
+        font-size: 18px;
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 40px;
+        line-height: 1.45;
+        position: relative;
+        margin-top: 20px;
+        border: 0px;
+        margin-bottom: 20px;
+    }
+  .piada   blockquote:before {
+        display: inline-block;
+        content: '\201C';
+        font-size: 80px;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        color: #7a7a7a;
+    }
+ .piada    .wrapper {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 300px;
+
+    }
+ .piada    .p-loader {
+        display: inline-block;
+        width: 30px;
+    }
+    .piada button {
+      color: white;
+       background-color: gray;
+    }
+    
+      .foto {
+      
+      margin: auto !important;
+    }
+    .invisible {
+       display: none !important; 
+    }
+    .loader {
+        display: inline-block;
+        width: 80px;
+        margin: 10px auto !important;
+    }
+    
+    </style>
+
+
+<div class="column is-half is-narrow"><div class="piada"><div class="center"><img id="foto-rosto" class="foto " src="data:image/jpeg;base64,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"></div><div class="center">
+<img id='lrd'src="https://www.promoveritas.com/wp-content/themes/promoveritas/img/loading.gif" class="loader"/>
+<blockquote id='txt' class="cite invisible"></blockquote>
+    <br>
+<code>npm install -g teles</code><br><button class="button is-dark" id="proxima">Proxima piada!</button>
+    </div></div></div>
+
+<script>
+var button = document.getElementById('proxima')
+var foto = document.getElementById('foto-rosto')
+var txt = document.getElementById('txt')
+var loader = document.getElementById('ldr')
+
+function hide() {
+    button.disable = true
+    txt.classList.add('invisible')
+	lrd.classList.remove('invisible')
+}
+
+function show() {
+    button.disable = false
+    txt.classList.remove('invisible')
+	lrd.classList.add('invisible')
+}
+function proxima() {
+  hide()
+  fetch('https://teles-jokes.azurewebsites.net/api/GetJoke?code=7skvGJHPnh6jOiZhwNKV0dL0awj9qTorLElJq596sKVHmrmgFJ6u4w==')
+    .then(x => x.json())
+    .then(x => x.joke)
+    .then(x => x.replace('||', '\n'))
+    .then(x => {
+      txt.innerText = x
+      show()
+  })
+}
+
+button.onclick = function() {
+    foto.classList.toggle('flip')
+    proxima()
+}
+
+proxima()
+</script>
+
+</html>
